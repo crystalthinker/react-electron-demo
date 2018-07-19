@@ -37,7 +37,7 @@ class Weather extends Component {
                        onChange = {this.updateState} /> <button className='btn btn-primary col-2' onClick={this.onSubmit}>Search</button>
                 </div>
                 {this.state.weatherData.length?<div className="row">
-                    <div className='col-12'>Weather data for the location  {this.state.location} is :</div>
+                    <div className='col-12'><p>Weather data for the location  {this.state.location} is :</p></div>
                         {
                             this.state.weatherData.map((item, i)=>{
                                 const timestamp = item.dt;
