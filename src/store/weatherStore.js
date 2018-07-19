@@ -8,12 +8,14 @@ configure({ enforceActions: true })
 
 class Store {
     weatherData = [];
-
+    updateWeatherData(data){
+        this.weatherData= data;
+    }
     getWeatherData(searchText) {
         let url = `${APP_CONSTANTS.API_URL}?q=${searchText}&appid=${APP_CONSTANTS.API_KEY}&units=metric`;
         axios.get(url)
             .then(res => {
-                this.weatherData= res.data.list||[];
+                this.updateWeatherData(res.data.list||[]);
             })
 
     }
@@ -21,6 +23,7 @@ class Store {
 
 decorate(Store, {
     getWeatherData: action,
+    updateWeatherData: action,
     weatherData: observable
 });
 const weatherStore = new Store();
