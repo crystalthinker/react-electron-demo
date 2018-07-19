@@ -14,7 +14,7 @@ class WeatherCard extends Component {
     }
     render() {
         return (
-            <div className="card col-3 bg-success">
+            <div className="card col-3 bg-success border-primary mb-3">
                 <div className="card-body">
                     <h5 className="card-title">On {this.props.date.getUTCDate()},  Time: {this.formatAMPM(this.props.date)},{this.props.dayOfWeek}</h5>
                     <p className="card-text">Temp: {this.props.weatherData.main.temp}°C</p>
