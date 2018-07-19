@@ -21,7 +21,7 @@ class Weather extends Component {
     }
     onSubmit(){
 
-        let url = `${APP_CONSTANTS.API_URL}?q=${this.state.location}&appid=${APP_CONSTANTS.API_KEY}`;
+        let url = `${APP_CONSTANTS.API_URL}?q=${this.state.location}&appid=${APP_CONSTANTS.API_KEY}&units=metric`;
         axios.get(url)
             .then(res => {
                 console.log(res.data.list);
