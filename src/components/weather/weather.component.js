@@ -32,8 +32,10 @@ class Weather extends Component {
     render() {
         return (
             <div className="container weather-container">
-                Search for a city name to get weather : <input type = "text" value = {this.state.location}
-                       onChange = {this.updateState} /> <button onClick={this.onSubmit}>Search</button>
+                <div className="row">
+                    <span className="col-5"><h4>Search for a city name to get weather :</h4></span> <input type="text" className="form-control col-4 input-sm m-1" value = {this.state.location}
+                       onChange = {this.updateState} /> <button className='btn btn-primary col-2' onClick={this.onSubmit}>Search</button>
+                </div>
                 {this.state.weatherData.length?<div className="row">
                     <div className='col-12'>Weather data for the location  {this.state.location} is :</div>
                         {

@@ -1,5 +1,6 @@
 {
   "name": "electron-weather-app",
+  "productName":"Weather App with Electron and React",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
