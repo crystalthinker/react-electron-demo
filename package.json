@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.0.0",
     "electron-is-dev": "^0.3.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -25,7 +27,7 @@
       "build/**/*",
       "node_modules/**/*"
     ],
-    "directories":{
+    "directories": {
       "buildResources": "assets"
     }
   },
