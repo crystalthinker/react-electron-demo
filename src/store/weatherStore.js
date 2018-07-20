@@ -8,16 +8,26 @@ configure({ enforceActions: true })
 
 
 class Store {
-    weatherData = [];
-    searchData = [];
+    weatherData;
+    searchData;
+    constructor(){
+        this.weatherData = [];
+        this.getUniqueSearchResult();
+    }
     updateWeatherData(data){
         this.weatherData= data;
     }
+    updateSearchData(data){
+        this.searchData= data;
+    }
+    getUniqueSearchResult(){
+        db.city.orderBy('name').uniqueKeys(result =>{
+            this.updateSearchData(result||[]);
+        });
+    }
     getWeatherData(searchText) {
         db.city.put({name: searchText}).then (()=>{
-            return db.city.toArray();
-        }).then((result)=>{
-            console.log(result);
+            this.getUniqueSearchResult();
         }).catch((error)=>{
             //
             // Finally don't forget to catch any error
@@ -38,6 +48,7 @@ class Store {
 decorate(Store, {
     getWeatherData: action,
     updateWeatherData: action,
+    updateSearchData: action,
     weatherData: observable,
     searchData: observable
 });

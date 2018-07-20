@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class SearchList extends Component {
     render() {
         return (
-            <div className="col-3">
-
+            <div>
+                Searched texts: {this.props.searchData.join(', ')}
             </div>
         );
     }

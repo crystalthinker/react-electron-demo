@@ -3,6 +3,7 @@ import './weather.component.css';
 import APP_CONSTANTS from '../../config/constants'
 import WeatherCard from "../weather-card/weather-card";
 import {observer} from "mobx-react";
+import SearchList from "../searchList/searchList.component";
 
 class Weather extends Component {
     constructor(props) {
@@ -33,10 +34,12 @@ class Weather extends Component {
         return (
             <div className="container weather-container">
                 <div className="row">
-
                     <span className="col-5"><h4>Search for a city name to get weather :</h4></span> <input type="text" className="form-control col-4 input-sm m-1" value = {this.state.location}
                        onChange = {this.updateState} /> <button className='btn btn-primary col-2' onClick={this.onSubmit}>Search</button>
                 </div>
+                {this.props.store.searchData?<div className="row">
+                    <SearchList searchData={this.props.store.searchData}/>
+                </div>: null}
                 {this.props.store.weatherData.length?<div className="row">
                     <div className='col-12'><p>Weather data for the location  {this.state.location} is :</p></div>
                         {
@@ -49,6 +52,7 @@ class Weather extends Component {
                             })
                         }
                 </div>:null}
+
             </div>
         );
     }
