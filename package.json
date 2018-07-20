@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.0.0",
+    "dexie": "^2.0.4",
     "electron-is-dev": "^0.3.0",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",

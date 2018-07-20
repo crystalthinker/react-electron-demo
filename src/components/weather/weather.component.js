@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-/*import axios from 'axios';*/
 import './weather.component.css';
 import APP_CONSTANTS from '../../config/constants'
 import WeatherCard from "../weather-card/weather-card";
 import {observer} from "mobx-react";
-import {configure, action} from "mobx";
-configure({ enforceActions: true });
 
 class Weather extends Component {
     constructor(props) {
